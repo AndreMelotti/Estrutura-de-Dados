@@ -36,6 +36,7 @@ double calcular (char menu, double x, double y){
 
 
 
+// Calculadora Mal feita testes...
 
 int main()
 {
