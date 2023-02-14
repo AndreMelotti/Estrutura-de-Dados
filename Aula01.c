@@ -33,7 +33,6 @@ int main()
     }
     
     
-    
 /*  int x, y, total;
     int menu;
     printf ("Calculadora Mal feita, por favor escolha a opção:\n");
