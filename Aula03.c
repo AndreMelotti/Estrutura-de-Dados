@@ -1,3 +1,6 @@
+/*Aula do dia 14/02*/
+
+
 #include <stdio.h>
 double calcular(char menu, double x, double y);
 
