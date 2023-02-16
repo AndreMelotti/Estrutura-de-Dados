@@ -18,14 +18,13 @@ typedef struct forma{
     float perimetro;
 }forma;
 
-float calculaForma (int tipo){
+float calculaForma (int tipo, int menu){
     float resultado;
-    int menu;
-    float b, h, r, B;             //b = base(ou base menor); h = altura; B = Base maior; r = raio;
+    float b, h, r, B;           //b = base(ou base menor); h = altura; B = Base maior; r = raio;
+    float l1, l2, l3, l4;       //l1 = lado 1; l2 = lado 2; l3 = lado 3; l4 = lado 4;
     
-    
-    if (tipo == 1){
-    switch (menu){
+    if (menu == 1){             // calcula a Área
+    switch (tipo){
         
         case 1:
         // Trinagulo
@@ -73,53 +72,51 @@ float calculaForma (int tipo){
 }
 }
     
-    if(tipo == 2){
-        printf("%d", x.tipo);//area
-    switch (menu){
+    if(menu == 2){              // Calcula o Perimetro
+    switch (tipo){
         
         case 1:
         // Trinagulo
-        printf("Digite o valor da base: ");
-        scanf ("%f", &b);
-        printf("Digite o valor da altura: ");
-        scanf ("%f", &h);
-        return resultado = (b * h)/2;
+        printf("Digite os valores dos 3 lados:\n");
+        scanf ("%f\n", &l1);
+        scanf ("%f\n", &l2);
+        scanf ("%f", &l3);
+        return resultado = l1 + l2 + l3;
         break;
         
         case 2:
         // Quadrado
-        printf("Digite o valor da base: ");
+        printf("Digite o valor do lado: ");
         scanf ("%f", &b);
-        return resultado = b * b;
+        return resultado = b * 4;
         break;
         
         case 3:
         // Retangulo
-        printf("Digite o valor da base: ");
-        scanf ("%f", &b);
-        printf("Digite o valor da altura: ");
-        scanf ("%f", &h);
-        return resultado = b * h;
+        printf("Digite os valores dos 4 lados:\n");
+        scanf ("%f\n", &l1);
+        scanf ("%f\n", &l2);
+        scanf ("%f\n", &l3);
+        scanf ("%f", &l4);
+        return resultado = l1 + l2 + l3 + l4;
         break;
         
         case 4:
         // Circulo
-        printf("Digite o valor do raio: ");
+        printf("Digite o valor do raio:\n");
         scanf ("%f", &r);
-        return resultado = 3,14 * (r * r);
+        return resultado = r * 6,28 ;
         break;
         
         case 5:
         // Trapezio
-        printf("Digite o valor da Base maior: ");
-        scanf ("%f", &B);
-        printf("Digite o valor da base menor: ");
-        scanf ("%f", &b);
-        printf("Digite o valor da altura: ");
-        scanf ("%f", &h);
-        return resultado = ((B + b) * h)/2;
+        printf("Digite os valores dos 4 lados:\n");
+        scanf ("%f\n", &l1);
+        scanf ("%f\n", &l2);
+        scanf ("%f\n", &l3);
+        scanf ("%f", &l4);
+        return resultado = l1 + l2 + l3 + l4;
         break;
-
 }
 }
     
@@ -133,30 +130,26 @@ int main()
 {
   
   struct forma x;
-  int tipo;
+  int menu;
+  float resultado;
   
-    printf ("Escolha se prefere calcular area ou perimetro: ");
-    scanf ("%d", &tipo);
+    printf ("Escolha a Forma que deseja:\n=============\n1-Triangulo\n2-Quadrado\n3-Retangulo\n4-Circulo\n5-Trapésio\n=============\n");
+    scanf ("%d", &x.tipo);
+ 
+    printf ("Escolha o que deseja calcular\n=============\n1-Área\n2-perimetro:\n=============\n");
+    scanf ("%d", &menu);
     
-
+    resultado = calculaForma(x.tipo, menu);
   
-  
-  if(tipo == 1 ){
-    printf ("Escolha a Forma que deseja calcular o Perimetro:\n=============\n1-Triangulo\n2-Quadrado\n3-Retangulo\n4-Circulo\n5-Trapésio\n=============\n");
-    scanf ("%d", &x.tipo);
-    x.perimetro = calculaForma(x.tipo);
-    printf ("O valor da Área é: %.2f", x.perimetro);
-  }
-  
-  if(tipo == 2){
-    printf ("Escolha a Forma que deseja calcular o Area:\n=============\n1-Triangulo\n2-Quadrado\n3-Retangulo\n4-Circulo\n5-Trapésio\n=============\n");
-    scanf ("%d", &x.tipo);
-    scanf ("%d")
-    x.area = calculaForma(x.tipo);
+  if(menu == 1 ){
+    x.area = resultado;
     printf ("O valor da Área é: %.2f", x.area);
   }
   
-  
+  if(menu == 2){
+    x.perimetro = resultado;
+    printf ("O valor da Área é: %.2f", x.perimetro);
+  }
   
   
   
